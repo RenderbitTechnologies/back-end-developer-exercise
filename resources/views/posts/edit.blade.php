@@ -11,6 +11,10 @@
 
 		{{ Form::text('title',null,['class'=>'form-control']) }}
 		<hr>
+
+		{{ Form::label('slug','Slug:') }}
+    	{{ Form::text('slug',null,array('class'=>'form-control','required'=>'','minlength'=>'5','maxlength'=>'255')) }}
+    	<hr>
 		{{ Form::label('body','Body:',['class'=>'form-spacing-top']) }}
 		
 		{{ Form::textArea('body',null, ['class'=>'form-control']) }}

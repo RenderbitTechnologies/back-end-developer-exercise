@@ -20,16 +20,22 @@
         <li class="{{ Request::is('contact')? 'active' : '' }}"><a href="/contact">Contact<span class="sr-only">(current)</span></a></li>
       </ul>
         <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="{{ route('posts.index') }}">Posts</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Log Out</a></li>
-          </ul>
-        </li>
+          @if(Auth::check())
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{ route('posts.index') }}">Posts</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href=" {{ route('logout') }} ">Log Out</a></li>
+              </ul>
+            </li>
+        @else
+
+            <a href="{{ route('login') }}" class="btn btn-default">Login</a>
+
+        @endif 
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

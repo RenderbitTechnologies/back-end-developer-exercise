@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title',' | View Post')
+@section('title'," | {{   $post->title }}")
 
 @section('content')
 
@@ -17,6 +17,11 @@
 				<dl class="dl-horizontal">
   					<dt>Created at:</dt>
   					<dd>{{ date('M j, Y h:ia ',strtotime($post->created_at))}}</dd>
+				</dl>
+				<hr>
+				<dl class="dl-horizontal">
+  					<dt>Slug:</dt>
+  					<dd>{{ $post->slug}}</dd>
 				</dl>
 				<hr>
 				<dl class="dl-horizontal">
@@ -39,10 +44,30 @@
 				<hr>
 				<div class='row'>
 					<div class='col-md-12'>
-						{!! Html::linkRoute('posts.index','< Sell all posts',[],array('class'=> "btn btn-default btn-block")) !!}	 
+						{!! Html::linkRoute('posts.index','< See all posts',[],array('class'=> "btn btn-default btn-block")) !!}	 
 					</div>
 				</div>
+			{{ Form::open(['route'=>['comments.store',$post->id],'method'=>'POST']) }}
+				<div class='row'>
+						<div class='col-md-6'>
+								{{ Form::label('name',"Name:") }}
+								{{ Form::text('name',null,['class'=>'form-control']) }}
+						</div>
+						<div class='col-md-6'>
+								{{ Form::label('email','Email:') }}
+								{{ Form::text('email',null,['class'=>'form-control']) }}
+						</div>
+						<div class='col-md-12'>
+								{{ Form::label('comment','Comments:') }}
+								{{ Form::textarea('comment',null,['class'=>'form-control','rows'=>'5']) }}
 
+								{{ Form::submit('Add comment',['class'=>'btn btn-success  btn-block']) }}
+								<hr>
+
+						</div>
+
+				</div>
+			{{ Form::close() }}
 		</div>
 	</div>
 </div>

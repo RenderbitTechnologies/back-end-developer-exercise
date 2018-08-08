@@ -11,6 +11,9 @@ use Session;
 
 class PostsController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -47,15 +50,16 @@ class PostsController extends Controller
         //validate the data 
             $this-> validate($request,array(
                 'title' => 'required|max:255',
-                //'slug' =>'required|alpha_dash|min:5|max:255',
+                'slug' =>'required|alpha_dash|min:5|max:255',
                 'body'  => 'required',
 
             ));
         //store in database 
             $post = new Post;
             $post->title = $request->title;
-            //$post->slug = $request->slug;
+            $post->slug = $request->slug;
             $post->body =   $request->body;
+            $post->user_id=auth()->id();
             $post->save();
 
             Session::flash('success','successfully saced ! ') ;
@@ -101,16 +105,29 @@ class PostsController extends Controller
     public function update(Request $request, $id)
     {
         //validate the data
-        $this-> validate($request,array(
+        $post= Post::find($id);
+
+        if($request->input('slug')==$post->slug){
+            $this-> validate($request,array(
                 'title' => 'required|max:255',
                 'body'  => 'required'
             ));
 
+        }else{
+
+
+        $this-> validate($request,array(
+                'title' => 'required|max:255',
+                'slug'  =>  'required|alpha_dash|min:5|max:255|unique:posts,slug',
+                'body'  => 'required'
+            ));
+        }
         //save the data to the database
             $post = Post::find($id);
 
             $post->title= $request ->input ('title');
             $post->body= $request->input('body');
+            $post->slug = $request->input('slug');
 
             $post->save();
 
