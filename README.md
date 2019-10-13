@@ -17,6 +17,7 @@ I did use
 - Allow photos to be inserted into blog posts.
 - Allow ckeditor editing of blog posts with rich formatting support.
 
+
 ### Link
 
 - Home page link:  ```<sitename>```
@@ -24,6 +25,7 @@ I did use
 - Admin page link:     ```<sitename>/<admin>```
 - One User All Post Link: ```<sitename>/<profile>/<username>```
 - One Single Post Link: ```<sitename>/<profile>/<username>/<Post_id>```
+And I use Link verification.
   
   
   
