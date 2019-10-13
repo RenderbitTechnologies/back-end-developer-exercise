@@ -2,20 +2,17 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class Post extends Model
 {
-    use Notifiable;
-
-    /**
+     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name','u_name', 'email','address', 'password',
+        'title', 'body'
     ];
 
     /**
@@ -24,17 +21,17 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'id', 'user_id','created_at','updated_at'
     ];
-
+     
 
     /**
      * This is relation model
      *
      */
-
-    public function posts()
+    public function user()
     {
-        return $this->hasMany('App\Post');
+        return $this->belongsTo('App\User');
     }
+
 }
