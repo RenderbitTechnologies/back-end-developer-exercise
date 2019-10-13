@@ -15,12 +15,13 @@ I did use
 
 - social login feature which allows users to login and sign up via their Google+/Facebook/Twitter/Github accounts.
 - Allow photos to be inserted into blog posts.
-- Allow CK editing of blog posts with rich formatting support.
+- Allow ckeditor editing of blog posts with rich formatting support.
 
 
 ### Configuration for social login
 
 For social login feature, we must configure .env
+[Socialite](https://laravel.com/docs/6.x/socialite)
 
 
 ```
@@ -36,11 +37,25 @@ twitter_CLIENT_SECRET =
 
 ```
 
+
+### Configuration for CKeditor
+
+[CKeditor](https://github.com/UniSharp/laravel-ckeditor)
+
+
 ### Configuration for Storage
 
 I use Storage link command for Storage sortcut
 
 ```
 php artisan storage:link
+
+```
+
+
+### Configuration for Database
+
+```
+php artisan migrate
 
 ```
