@@ -28,7 +28,7 @@
                     <div class="my-4 mx-1">
                         <a class="btn btn-warning " href="/admin/{{$post->id}}/edit">Edit</a>
 
-                    <form class="d-inline" action="admin/{id}/delete" method="POST">
+                    <form class="d-inline" action="/admin/{{$post->id}}/delete" method="POST">
                         {{csrf_field()}}
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger  float-right">Delete</button>
