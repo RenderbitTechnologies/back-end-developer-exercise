@@ -17,7 +17,17 @@ I did use
 - Allow photos to be inserted into blog posts.
 - Allow ckeditor editing of blog posts with rich formatting support.
 
+### Link
 
+- Home page link:  ```<sitename>```
+- About page link: ```<sitename>/<about>```
+- Admin page link:     ```<sitename>/<admin>```
+- One User All Post Link: ```<sitename>/<profile>/<username>```
+- One Single Post Link: ```<sitename>/<profile>/<username>/<Post_id>```
+  
+  
+  
+  
 ### Configuration for social login
 
 For social login feature, we must configure .env
@@ -38,9 +48,11 @@ twitter_CLIENT_SECRET =
 ```
 
 
-### Configuration for CKeditor
+### Configuration for CKeditor [CKeditor](https://github.com/UniSharp/laravel-ckeditor)
 
-[CKeditor](https://github.com/UniSharp/laravel-ckeditor)
+```
+composer require unisharp/laravel-ckeditor
+```
 
 
 ### Configuration for Storage
