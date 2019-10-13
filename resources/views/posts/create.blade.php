@@ -8,7 +8,7 @@
            
     <div class="card m-3" >
         <div class="card-header">
-           <form action="{{url('admin')}}" method="POST" enctype="multipart/form-data">
+            <form action="store" method="POST" enctype="multipart/form-data">
                 {{csrf_field()}}
 
                 {{-- Post title input --}}
