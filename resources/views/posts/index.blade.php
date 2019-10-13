@@ -20,7 +20,7 @@
                 <a class="btn btn-info" href="admin/create">Create Post</a>
             </div>
 
-
+ 
                 
 
             @if (count($posts)>0)
