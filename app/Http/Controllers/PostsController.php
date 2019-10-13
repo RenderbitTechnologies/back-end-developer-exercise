@@ -107,16 +107,25 @@ class PostsController extends Controller
        if(!$finduser){
           return redirect('/')->with('error' , "Sorry We Can not find any user by this name");
        }else{
+
             //find post
           $post = Post::find($id);
 
-          if(!$post){
-            return redirect('/')->with('error' , "Sorry We Can not find any post by this id");
-          }
-          else{
-            $post = Post::find($id);
-            return view('posts.show')->with('post' , $post);
-          }
+            if($finduser->id == $post->user_id){
+
+                if(!$post){
+                    return redirect('/')->with('error' , "Sorry We Can not find any post by this id");
+                }
+                else{
+                    $post = Post::find($id);
+                    return view('posts.show')->with('post' , $post);
+                }
+            }
+            else{
+                return redirect('/')->with('error' , "Sorry We Can not find any post by this information");
+            }
+
+
            
        }
     }
