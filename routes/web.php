@@ -27,17 +27,19 @@ Auth::routes();
 //admin page
 Route::get('admin', 'PostsController@index');
 
+Route::post('admin/store', 'PostsController@store');
+
 Route::get('admin/create', 'PostsController@create');
 
 Route::get('/profile/{uname}/{id}', 'PostsController@singlepost');
 
 Route::get('admin/{id}/edit', 'PostsController@edit');
 
-Route::post('admin/{id}/update', 'PostsController@update');
+Route::put('admin/{id}/update', 'PostsController@update');
 
 Route::delete('admin/{id}/delete', 'PostsController@destroy');
 
-
+ 
 
 
 //socialite
