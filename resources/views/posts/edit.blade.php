@@ -8,8 +8,7 @@
            
     <div class="card m-3" >
         <div class="card-header">
-           <form action="admin/{id}/update" method="POST" enctype="multipart/form-data">
-            {{-- {{route('admin.update', $post->id)}} --}}
+           <form action="update" method="POST" enctype="multipart/form-data">
                 {{csrf_field()}}
                 @method('PUT')
                
