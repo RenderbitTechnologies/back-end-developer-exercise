@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -40,6 +40,9 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+
+  
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -50,8 +53,12 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
+            'u_name' => 'required|string|max:255|unique:users',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'address' => 'required|string|max:2000',
+            'password' => 'required|string|min:8|confirmed|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/',
+
+            // 
         ]);
     }
 
@@ -65,7 +72,9 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'u_name' => $data['u_name'],
             'email' => $data['email'],
+            'address' => $data['address'],
             'password' => Hash::make($data['password']),
         ]);
     }
