@@ -1,61 +1,51 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Back-end developer exercise
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+&copy; 2018 Renderbit Technologies LLP.
 
-## About Laravel
+## Prerequisites
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+You should be familiar with PHP 7, Laravel 5, Git and GitHub.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Getting Started
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+This tutorial assumes you have a PHP 7 development environment set up on your machine, with the following components at minimum:
 
-## Learning Laravel
+1. PHP 7.1 or better
+2. Choice of server (Apache/Nginx)
+3. Choice of Database (MySQL/MariaDB/PostgreSQL/SQLite)
+4. Choice of IDE/Editor
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Fork this repository, and clone your fork locally. All submissions have to be made as a pull request against this repository.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Requirements
 
-## Laravel Sponsors
+You have to design a blogging application.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Any user can sign up and create a blog of their own. When signing up, you have to record the user's full name, unique email address, password (8 characters minimum with 1 special character required) and choice of unique username.
 
-### Premium Partners
+The homepage of the blog can be viewed by anyone without login. The homepage shall show a list of all blog posts by all users, with most recent posts on top. The list of blog posts shall be paginated, with 8 posts per page. On clicking a post, a user can view the entire post content.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+Every user shall have his/her blog home page at `<sitename>/<username>`. This page shall show a list of all posts by the particular user, with most recent posts on top. This list of blog posts shall also be paginated, with 8 posts per page. On clicking a post, a user can view the entire post content.
 
-## Contributing
+A blog post has the URL `<sitename>/<username>/<post_unique_slug_from_title>`. A blog post has a post title and post content. Anyone can view a blog post without login. However, you need to login to comment on a blog post. Any user can comment on any blog post. However, a user can only delete comments that he has made on other users' blog posts. The author of the blog post can delete any comment on the blog post made by any user. The comments are shown below the blog post content, with most recent comments on top. A form to add a new comment is shown above the comments thread.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Every user can access the admin  panel at `<sitename>/admin`. A user has to login to access the admin panel. The admin panel should show a list of all posts, with an option to edit and delete each post. The admin panel should also have an option to create a new post.
 
-## Code of Conduct
+### UI
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+You are free to use any UI framework or library of your choice. We recommend [Bootstrap](https://getbootstrap.com) as a good place to get started.
 
-## Security Vulnerabilities
+Note that you are not required to build a mobile responsive website, although if you build one, we will be assigning extra credits for that.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Libraries & Frameworks
 
-## License
+You are free to use any libraries, frameworks & tools which you think will be useful to build this application. No credits are deducted for use of libraries.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Extra Credits
+
+- Implement a social login feature which allows users to login and sign up via their Google+/Facebook/Twitter/Github accounts.
+- Allow photos to be inserted into blog posts.
+- Allow WYSIWYG editing of blog posts with rich formatting support.
+- Implement a CAPTCHA for adding comments.
+- Implement two-factor authentication for login using SMS for one-time passwords.
+- Surprise us. :smiley:
