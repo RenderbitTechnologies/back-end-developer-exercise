@@ -1,16 +1,16 @@
 # Back-end developer exercise
 
-&copy; 2018 Renderbit Technologies LLP.
+&copy; 2021 Renderbit Technologies LLP.
 
 ## Prerequisites
 
-You should be familiar with PHP 7, Laravel 5, Git and GitHub.
+You should be familiar with PHP 7.4 (or better), Laravel 8, Git and GitHub.
 
 ## Getting Started
 
-This tutorial assumes you have a PHP 7 development environment set up on your machine, with the following components at minimum:
+This tutorial assumes you have a PHP 7.4 (or better) development environment set up on your machine, with the following components at minimum:
 
-1. PHP 7.1 or better
+1. PHP 7.4 or better
 2. Choice of server (Apache/Nginx)
 3. Choice of Database (MySQL/MariaDB/PostgreSQL/SQLite)
 4. Choice of IDE/Editor
@@ -33,9 +33,11 @@ Every user can access the admin  panel at `<sitename>/admin`. A user has to logi
 
 ### UI
 
-You are free to use any UI framework or library of your choice. We recommend [Bootstrap](https://getbootstrap.com) as a good place to get started.
+You are free to use any UI framework or library of your choice. We recommend [Bootstrap](https://getbootstrap.com) or [Tailwind](https://tailwindcss.com) as a good place to get started.
 
 Note that you are not required to build a mobile responsive website, although if you build one, we will be assigning extra credits for that.
+
+You can also use a front-end Javascript framework (such as React or Vue.js) to build your application, if you so prefer.
 
 ### Libraries & Frameworks
 
