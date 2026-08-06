@@ -21,11 +21,13 @@ RUN apt-get update \
 
 # tokenizer and fileinfo are provided by php8.3-common (pulled in via php8.3-cli)
 
-RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x -o /tmp/nodesource-setup.sh \
+    && bash /tmp/nodesource-setup.sh \
+    && rm /tmp/nodesource-setup.sh \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends nodejs \
     && rm -rf /var/lib/apt/lists/*
 
-RUN php -r "copy('https://composer.github.io/installer.sig', 'php://stdout');" > /tmp/composer.sig \
+RUN curl -fsSL https://composer.github.io/installer.sig -o /tmp/composer.sig \
     && curl -fsSL https://getcomposer.org/installer -o /tmp/composer-setup.php \
     && php -r "\$sig = trim(file_get_contents('/tmp/composer.sig')); if (hash_file('sha384', '/tmp/composer-setup.php') !== \$sig) { fwrite(STDERR, 'Composer installer corrupt' . PHP_EOL); exit(1); }" \
     && php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer \
