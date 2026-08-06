@@ -1,6 +1,6 @@
 # Back-end developer exercise
 
-&copy; 2021 Renderbit Technologies LLP.
+&copy; 2026 Renderbit Technologies Pvt. Ltd.
 
 ## Prerequisites
 
