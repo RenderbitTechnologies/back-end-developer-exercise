@@ -4,13 +4,13 @@
 
 ## Prerequisites
 
-You should be familiar with PHP 7.4 (or better), Laravel 8, Git and GitHub.
+You should be familiar with PHP 8.2 (or better), Laravel 12, Git and GitHub.
 
 ## Getting Started
 
-This tutorial assumes you have a PHP 7.4 (or better) development environment set up on your machine, with the following components at minimum:
+This tutorial assumes you have a PHP 8.2 (or better) development environment set up on your machine, with the following components at minimum:
 
-1. PHP 7.4 or better
+1. PHP 8.2 or better
 2. Choice of server (Apache/Nginx)
 3. Choice of Database (MySQL/MariaDB/PostgreSQL/SQLite)
 4. Choice of IDE/Editor
