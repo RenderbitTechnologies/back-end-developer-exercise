@@ -1,0 +1,16 @@
+{
+  "name": "Laravel Blogging Exercise",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "user": "ubuntu",
+  "install": "bash .cursor/install.sh",
+  "terminals": [
+    {
+      "name": "laravel",
+      "command": "php artisan serve --host=0.0.0.0 --port=8000"
+    }
+  ],
+  "ports": [8000]
+}
