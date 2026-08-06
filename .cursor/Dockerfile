@@ -6,20 +6,22 @@ RUN apt-get update \
         curl \
         git \
         gnupg \
+        software-properties-common \
         unzip \
         sqlite3 \
-        php8.3-cli \
-        php8.3-mbstring \
-        php8.3-xml \
-        php8.3-curl \
-        php8.3-zip \
-        php8.3-sqlite3 \
-        php8.3-mysql \
-        php8.3-bcmath \
-        php8.3-intl \
+    && add-apt-repository ppa:ondrej/php -y \
+    && apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        php8.4-cli \
+        php8.4-mbstring \
+        php8.4-xml \
+        php8.4-curl \
+        php8.4-zip \
+        php8.4-sqlite3 \
+        php8.4-mysql \
+        php8.4-bcmath \
+        php8.4-intl \
     && rm -rf /var/lib/apt/lists/*
-
-# tokenizer and fileinfo are provided by php8.3-common (pulled in via php8.3-cli)
 
 # Install Node.js 22 from NodeSource using a keyring + .sources entry (no remote setup script)
 RUN mkdir -p /usr/share/keyrings \
