@@ -21,7 +21,7 @@ RUN apt-get update \
 
 # tokenizer and fileinfo are provided by php8.3-common (pulled in via php8.3-cli)
 
-# Install Node.js 22 from NodeSource using a pinned keyring (no remote setup script)
+# Install Node.js 22 from NodeSource using a keyring + .sources entry (no remote setup script)
 RUN mkdir -p /usr/share/keyrings \
     && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key \
         | gpg --dearmor -o /usr/share/keyrings/nodesource.gpg \
